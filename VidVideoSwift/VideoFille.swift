@@ -21,8 +21,5 @@ class VideoFile {
         videoName = videosDictioary["title"] as! String
         videoUrl = videosDictioary["clip_url"] as? String
         videoThumbnailURL = videosDictioary["thumbnail_url"] as! String
-        
-        
     }
-
 }

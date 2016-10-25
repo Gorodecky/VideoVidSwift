@@ -35,9 +35,22 @@
                     <view key="view" contentMode="scaleToFill" id="1mR-XL-Qed">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yzi-GY-JYs">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="sow-1a-9e2" id="hYx-fs-2Yq"/>
+                                    <outlet property="delegate" destination="sow-1a-9e2" id="Fz6-x8-3ns"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Featured" image="Featured.png" id="IHR-IZ-XQb"/>
+                    <connections>
+                        <outlet property="tableView" destination="yzi-GY-JYs" id="Nwj-9S-bRu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpv-hL-dNU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

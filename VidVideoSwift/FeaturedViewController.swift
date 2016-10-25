@@ -10,15 +10,18 @@ import UIKit
 import Alamofire
 
 
-class FeaturedViewController: UIViewController {
+class FeaturedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    var arrayVideosParse = [VideoFile]()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let urlString = "https://api.vid.me/videos/featured"
         
-       
-            
         Alamofire.request(.GET, urlString).responseJSON { (request, response, rezult) -> Void in
             
             //print("RQUEST: \(request)")
@@ -55,4 +58,15 @@ class FeaturedViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    internal func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arrayVideosParse.count
+    }
+    internal func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        
+        
+    }
+
+
+
 }
