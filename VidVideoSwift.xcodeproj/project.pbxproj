@@ -10,7 +10,6 @@
 		EA43C7F809079D6BC1A14715 /* Pods_VidVideoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1D41B874D6DF5DE3A79EA4 /* Pods_VidVideoSwift.framework */; };
 		FE2B09C41DBA3ABD00325710 /* VideoFille.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2B09C31DBA3ABD00325710 /* VideoFille.swift */; };
 		FEB1D8351DB95539007B089A /* FeaturedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB1D8341DB95539007B089A /* FeaturedViewController.swift */; };
-		FEB1D8371DB959E6007B089A /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB1D8361DB959E6007B089A /* ApiManager.swift */; };
 		FEC4AA091DB8F1F700B8B0D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC4AA081DB8F1F700B8B0D8 /* AppDelegate.swift */; };
 		FEC4AA0B1DB8F1F700B8B0D8 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC4AA0A1DB8F1F700B8B0D8 /* FeedViewController.swift */; };
 		FEC4AA0E1DB8F1F700B8B0D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC4AA0C1DB8F1F700B8B0D8 /* Main.storyboard */; };
@@ -31,7 +30,6 @@
 		90FCBA56105AFD5678BC5370 /* Pods-VidVideoSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidVideoSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-VidVideoSwift/Pods-VidVideoSwift.release.xcconfig"; sourceTree = "<group>"; };
 		FE2B09C31DBA3ABD00325710 /* VideoFille.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFille.swift; sourceTree = "<group>"; };
 		FEB1D8341DB95539007B089A /* FeaturedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedViewController.swift; sourceTree = "<group>"; };
-		FEB1D8361DB959E6007B089A /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		FEC4AA051DB8F1F700B8B0D8 /* VidVideoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VidVideoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC4AA081DB8F1F700B8B0D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC4AA0A1DB8F1F700B8B0D8 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 				FEC4AA1A1DB9077E00B8B0D8 /* Images */,
 				FEC4AA271DB9109B00B8B0D8 /* ViewControllers */,
 				FEC4AA081DB8F1F700B8B0D8 /* AppDelegate.swift */,
-				FEB1D8361DB959E6007B089A /* ApiManager.swift */,
 				FEC4AA0F1DB8F1F700B8B0D8 /* Assets.xcassets */,
 				FEC4AA111DB8F1F700B8B0D8 /* LaunchScreen.storyboard */,
 				FEC4AA141DB8F1F700B8B0D8 /* Info.plist */,
@@ -274,7 +271,6 @@
 				FE2B09C41DBA3ABD00325710 /* VideoFille.swift in Sources */,
 				FEC4AA2A1DB9111D00B8B0D8 /* NewViewController.swift in Sources */,
 				FEC4AA0B1DB8F1F700B8B0D8 /* FeedViewController.swift in Sources */,
-				FEB1D8371DB959E6007B089A /* ApiManager.swift in Sources */,
 				FEB1D8351DB95539007B089A /* FeaturedViewController.swift in Sources */,
 				FEC4AA091DB8F1F700B8B0D8 /* AppDelegate.swift in Sources */,
 			);

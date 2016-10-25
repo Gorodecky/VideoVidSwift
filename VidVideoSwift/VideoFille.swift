@@ -11,13 +11,18 @@ import Foundation
 class VideoFile {
 
     var videoName : String
-    var videoUrl : String
+    var videoUrl : String?
     var videoThumbnailURL : String
     
-    init (listVideoJSON: NSDictionary) {
-        videoName = listVideoJSON["title"] as! String
-        videoUrl = listVideoJSON["clip_url"] as! String
-        videoThumbnailURL = listVideoJSON["thumbnail_url"] as! String
+    init (listVideoJSON video: NSDictionary) {
+        let videosDictioary = video
+        //print("videosDictioary  \(videosDictioary)")
+        
+        videoName = videosDictioary["title"] as! String
+        videoUrl = videosDictioary["clip_url"] as? String
+        videoThumbnailURL = videosDictioary["thumbnail_url"] as! String
+        
+        
     }
 
 }

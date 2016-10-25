@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 
 class FeaturedViewController: UIViewController {
@@ -16,16 +17,42 @@ class FeaturedViewController: UIViewController {
 
         let urlString = "https://api.vid.me/videos/featured"
         
-        let apiManager = ApiManager()
+       
             
-        apiManager.createJSON(urlString)
-        
+        Alamofire.request(.GET, urlString).responseJSON { (request, response, rezult) -> Void in
+            
+            //print("RQUEST: \(request)")
+            //print("RESPONSE: \(response)")
+            //print("REZULT: \(rezult.value)")
+            
+            if let JSON = rezult.value {
+                
+                print(JSON)
+                
+                let videosArray = JSON["videos"] as! NSArray
+                
+                //print(videosArray)
+                
+                var arrayVideosParse = [VideoFile]()
+                
+                for video in videosArray {
+                
+                   let video = VideoFile(listVideoJSON : video as! NSDictionary)
+                    arrayVideosParse.append(video)
+                    
+                    print("video = ")
+                    print("videoName = \(video.videoName)")
+                    print("videoUrl = \(video.videoUrl)")
+                    print("videoThumbnailURL = \(video.videoThumbnailURL)")
+                    print("/////////////////////////")
+
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 }
