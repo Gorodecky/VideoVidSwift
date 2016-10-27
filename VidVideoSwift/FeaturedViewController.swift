@@ -11,62 +11,50 @@ import Alamofire
 
 
 class FeaturedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
+    let kCustomCellIdentifier = "CustomCellIdentifier"
+    
     @IBOutlet weak var tableView: UITableView!
     
-    var arrayVideosParse = [VideoFile]()
-
+    var arrayVideosParse : [VideoFile] = []
     
+
+    ///MARK: viewDidLoad
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         let urlString = "https://api.vid.me/videos/featured"
         
-        Alamofire.request(.GET, urlString).responseJSON { (request, response, rezult) -> Void in
-            
-            //print("RQUEST: \(request)")
-            //print("RESPONSE: \(response)")
-            //print("REZULT: \(rezult.value)")
-            
-            if let JSON = rezult.value {
-                
-                print(JSON)
-                
-                let videosArray = JSON["videos"] as! NSArray
-                
-                //print(videosArray)
-                
-                var arrayVideosParse = [VideoFile]()
-                
-                for video in videosArray {
-                
-                   let video = VideoFile(listVideoJSON : video as! NSDictionary)
-                    arrayVideosParse.append(video)
-                    
-                    print("video = ")
-                    print("videoName = \(video.videoName)")
-                    print("videoUrl = \(video.videoUrl)")
-                    print("videoThumbnailURL = \(video.videoThumbnailURL)")
-                    print("/////////////////////////")
-
-                }
-            }
-        }
+        let api = APIRequest()
+        
+        arrayVideosParse = api.requestAndCreateArrayVideos(urlString)
+        
+        print(arrayVideosParse.count)
+        
+        tableView.registerClass(CustomCell.self, forCellReuseIdentifier: kCustomCellIdentifier)
+        let nib = UINib(nibName: "CustomCell", bundle: nil)
+        tableView.registerNib(nib, forCellReuseIdentifier: kCustomCellIdentifier)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //MARK:UITableViewDataSource
+    
     internal func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayVideosParse.count
     }
+    
+    
     internal func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(kCustomCellIdentifier) as! CustomCell
         
         
         
+        return cell
     }
-
-
 
 }

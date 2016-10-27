@@ -9,10 +9,16 @@
 import UIKit
 
 class CustomCell: UITableViewCell {
-
+    
+    @IBOutlet weak var imageVideo: UIImageView!
+    @IBOutlet weak var nameLable: UILabel!
+    @IBOutlet weak var descriptionLable: UILabel!
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
