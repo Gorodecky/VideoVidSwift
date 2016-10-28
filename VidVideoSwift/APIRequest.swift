@@ -11,42 +11,35 @@ import Alamofire
 
 class APIRequest: NSObject {
     
-    func getVideosArray (enterURLString : String, clousore:([VideoFile]	-> ())) {
-    
-    
-        var arrayVideos = [VideoFile]()
+    class func getVideosArray (enterURLString:String, clousore:([VideoFile]?)->()) {
         
-        Alamofire.request(.GET, enterURLString).responseJSON { (request, response, rezult) -> Void in
+        Alamofire.request(.GET, enterURLString).responseJSON { (response) -> Void in
             
-            //print("RQUEST: \(request)")
-            //print("RESPONSE: \(response)")
-            //print("REZULT: \(rezult.value)")
-            
-            if let JSON = rezult.value {
+            if let JSON = response.result.value {
                 
-                //print(JSON)
+                var arrayVideos = [VideoFile]()
                 
                 let videosArray = JSON["videos"] as! NSArray
                 
-                //print(videosArray)
-                
-                
+                print("Videos Array = \(videosArray)")
                 
                 for video in videosArray {
                     
                     let video = VideoFile(listVideoJSON : video as! NSDictionary)
                     arrayVideos.append(video)
-                    
-                    /*
-                    print("video = ")
-                    print("videoName = \(video.videoName)")
-                    print("videoUrl = \(video.videoUrl)")
-                    print("videoThumbnailURL = \(video.videoThumbnailURL)")
-                    print("/////////////////////////")*/
                 }
-                //print(arrayVideos.count)
+                
+                if arrayVideos.count > 0 {
+                    
+                    clousore(arrayVideos)
+                } else {
+                    clousore(nil)
+                }
+            } else {
+                
+                clousore(nil)
             }
+
         }
-        clousore(arrayVideos)
     }
 }

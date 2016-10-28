@@ -13,6 +13,7 @@ class VideoFile {
     var videoName : String
     var videoUrl : String?
     var videoThumbnailURL : String
+    var videoDateOfCreated : String
     
     init (listVideoJSON video: NSDictionary) {
         let videosDictioary = video
@@ -21,5 +22,6 @@ class VideoFile {
         videoName = videosDictioary["title"] as! String
         videoUrl = videosDictioary["clip_url"] as? String
         videoThumbnailURL = videosDictioary["thumbnail_url"] as! String
+        videoDateOfCreated = videosDictioary["date_created"] as! String
     }
 }

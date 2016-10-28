@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-
 
 class FeaturedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -26,27 +24,32 @@ class FeaturedViewController: UIViewController, UITableViewDelegate, UITableView
 
         let urlString = "https://api.vid.me/videos/featured"
         
-        let api = APIRequest()
-        
-        api.getVideosArray(urlString) { (videos:[VideoFile]) -> () in
+        APIRequest.getVideosArray(urlString) { (videoFile: [VideoFile]?) in
             
-            self.arrayVideosParse = videos
-            self.tableView.reloadData()
-            print(self.arrayVideosParse.count)
+            if let videoFile = videoFile {
+                self.arrayVideosParse = videoFile
+                self.tableView.reloadData()
+                print("arrayVideosParse.count = \(videoFile.count)")
+            } else {
+                print("videoFile is missing")
+            }
         }
         
+        print(arrayVideosParse.count)
         
-        //print(arrayVideosParse.count)
+        tableView.registerNib(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier:kCustomCellIdentifier)
         
-        tableView.registerClass(CustomCell.self, forCellReuseIdentifier: kCustomCellIdentifier)
-        let nib = UINib(nibName: "CustomCell", bundle: nil)
-        tableView.registerNib(nib, forCellReuseIdentifier: kCustomCellIdentifier)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+     internal func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 130
+    }
+
     
     //MARK:UITableViewDataSource
     
@@ -56,9 +59,12 @@ class FeaturedViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     internal func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(kCustomCellIdentifier) as! CustomCell
         
+        let cell = tableView.dequeueReusableCellWithIdentifier(kCustomCellIdentifier, forIndexPath: indexPath) as! CustomCell
         
+        let video = self.arrayVideosParse[indexPath.row]
+        
+        cell.processVideo(video)
         
         return cell
     }
