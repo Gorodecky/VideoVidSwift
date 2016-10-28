@@ -11,7 +11,9 @@ import Alamofire
 
 class APIRequest: NSObject {
     
-    func requestAndCreateArrayVideos(enterURLString : String) -> Array<VideoFile> {
+    func getVideosArray (enterURLString : String, clousore:([VideoFile]	-> ())) {
+    
+    
         var arrayVideos = [VideoFile]()
         
         Alamofire.request(.GET, enterURLString).responseJSON { (request, response, rezult) -> Void in
@@ -42,9 +44,9 @@ class APIRequest: NSObject {
                     print("videoThumbnailURL = \(video.videoThumbnailURL)")
                     print("/////////////////////////")*/
                 }
-                print(arrayVideos.count)
+                //print(arrayVideos.count)
             }
         }
-        return arrayVideos
+        clousore(arrayVideos)
     }
 }

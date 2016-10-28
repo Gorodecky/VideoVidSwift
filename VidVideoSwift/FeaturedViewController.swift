@@ -28,9 +28,15 @@ class FeaturedViewController: UIViewController, UITableViewDelegate, UITableView
         
         let api = APIRequest()
         
-        arrayVideosParse = api.requestAndCreateArrayVideos(urlString)
+        api.getVideosArray(urlString) { (videos:[VideoFile]) -> () in
+            
+            self.arrayVideosParse = videos
+            self.tableView.reloadData()
+            print(self.arrayVideosParse.count)
+        }
         
-        print(arrayVideosParse.count)
+        
+        //print(arrayVideosParse.count)
         
         tableView.registerClass(CustomCell.self, forCellReuseIdentifier: kCustomCellIdentifier)
         let nib = UINib(nibName: "CustomCell", bundle: nil)
