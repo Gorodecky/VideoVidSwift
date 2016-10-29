@@ -7,10 +7,16 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
 class FeaturedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    let avPlayerViewController = AVPlayerViewController()
+    var avPlayer : AVPlayer?
+    
     let kCustomCellIdentifier = "CustomCellIdentifier"
+    
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -49,14 +55,32 @@ class FeaturedViewController: UIViewController, UITableViewDelegate, UITableView
      internal func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 130
     }
-
+    
+    //MARK:UITableViewDelegate
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        print("push \(indexPath.row)")
+        
+        let videoUrl = self.arrayVideosParse[indexPath.row].videoUrl
+        
+        let urlForPlayer = NSURL(string: videoUrl!)
+        
+        self.avPlayer = AVPlayer(URL: urlForPlayer!)
+        
+        self.avPlayerViewController.player = self.avPlayer
+        
+        self.presentViewController(self.avPlayerViewController, animated: true) { () -> Void in
+            self.avPlayerViewController.player?.play()
+        }
+        
+    }
     
     //MARK:UITableViewDataSource
     
     internal func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayVideosParse.count
     }
-    
+
     
     internal func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -65,7 +89,7 @@ class FeaturedViewController: UIViewController, UITableViewDelegate, UITableView
         let video = self.arrayVideosParse[indexPath.row]
         
         cell.processVideo(video)
-        
+        cell.prepareForReuse()
         return cell
     }
 

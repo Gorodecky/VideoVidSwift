@@ -40,6 +40,12 @@ class CustomCell: UITableViewCell {
         }
     }
     
+    override func prepareForReuse() {
+        //self.nameLable.text = " "
+        //self.dateOfCreatedLable.text = " "
+        self.imageVideo.image = nil
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
