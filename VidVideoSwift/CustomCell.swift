@@ -17,6 +17,13 @@ class CustomCell: UITableViewCell {
     @IBOutlet weak var nameLable: UILabel!
     @IBOutlet weak var dateOfCreatedLable: UILabel!
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        //self.nameLable.text = ""
+        //self.dateOfCreatedLable.text = ""
+        self.imageVideo.image = nil
+    }
+    
     func processVideo(videoFile: VideoFile) {
         
         self.nameLable.text = videoFile.videoName
@@ -40,20 +47,15 @@ class CustomCell: UITableViewCell {
         }
     }
     
-    override func prepareForReuse() {
-        //self.nameLable.text = " "
-        //self.dateOfCreatedLable.text = " "
-        self.imageVideo.image = nil
-    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }

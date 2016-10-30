@@ -20,7 +20,7 @@ class VideoFile {
         //print("videosDictioary  \(videosDictioary)")
         
         videoName = videosDictioary["title"] as! String
-        videoUrl = videosDictioary["clip_url"] as? String
+        videoUrl = videosDictioary["complete_url"] as? String
         videoThumbnailURL = videosDictioary["thumbnail_url"] as! String
         videoDateOfCreated = videosDictioary["date_created"] as! String
     }

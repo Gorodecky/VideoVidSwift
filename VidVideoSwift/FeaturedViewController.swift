@@ -22,7 +22,6 @@ class FeaturedViewController: UIViewController, UITableViewDelegate, UITableView
     
     var arrayVideosParse : [VideoFile] = []
     
-
     ///MARK: viewDidLoad
     override func viewDidLoad() {
         
@@ -63,24 +62,26 @@ class FeaturedViewController: UIViewController, UITableViewDelegate, UITableView
         
         let videoUrl = self.arrayVideosParse[indexPath.row].videoUrl
         
-        let urlForPlayer = NSURL(string: videoUrl!)
+        playAVPlayerWithURLString(videoUrl!)
         
+        }
+    
+    func playAVPlayerWithURLString (urlString:String) {
+        
+        let urlForPlayer = NSURL(string: urlString)
         self.avPlayer = AVPlayer(URL: urlForPlayer!)
         
         self.avPlayerViewController.player = self.avPlayer
         
         self.presentViewController(self.avPlayerViewController, animated: true) { () -> Void in
             self.avPlayerViewController.player?.play()
-        }
-        
     }
-    
+}
     //MARK:UITableViewDataSource
     
     internal func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayVideosParse.count
     }
-
     
     internal func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -92,5 +93,4 @@ class FeaturedViewController: UIViewController, UITableViewDelegate, UITableView
         cell.prepareForReuse()
         return cell
     }
-
 }
