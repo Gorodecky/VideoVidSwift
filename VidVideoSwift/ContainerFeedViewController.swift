@@ -1,5 +1,5 @@
 //
-//  FeedViewController.swift
+//  ContainerFeedViewController.swift
 //  VidVideoSwift
 //
 //  Created by Vitaliy on 11/2/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeedViewController: UIViewController {
+class ContainerFeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

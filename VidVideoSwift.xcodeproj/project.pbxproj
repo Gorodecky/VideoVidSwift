@@ -11,9 +11,11 @@
 		FE03CC011DBFF2B000368E0B /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE03CC001DBFF2B000368E0B /* CustomCell.swift */; };
 		FE03CC031DBFF2E200368E0B /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE03CC021DBFF2E200368E0B /* CustomCell.xib */; };
 		FE2B09C41DBA3ABD00325710 /* VideoFille.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2B09C31DBA3ABD00325710 /* VideoFille.swift */; };
+		FEA8AABD1DCA302A0078562A /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA8AABC1DCA302A0078562A /* FeedViewController.swift */; };
+		FEA8AABF1DCA30740078562A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA8AABE1DCA30740078562A /* RegisterViewController.swift */; };
+		FEA8AAC11DCA30DA0078562A /* ContainerFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA8AAC01DCA30DA0078562A /* ContainerFeedViewController.swift */; };
 		FEB1D8351DB95539007B089A /* FeaturedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB1D8341DB95539007B089A /* FeaturedViewController.swift */; };
 		FEC4AA091DB8F1F700B8B0D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC4AA081DB8F1F700B8B0D8 /* AppDelegate.swift */; };
-		FEC4AA0B1DB8F1F700B8B0D8 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC4AA0A1DB8F1F700B8B0D8 /* FeedViewController.swift */; };
 		FEC4AA0E1DB8F1F700B8B0D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC4AA0C1DB8F1F700B8B0D8 /* Main.storyboard */; };
 		FEC4AA101DB8F1F700B8B0D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC4AA0F1DB8F1F700B8B0D8 /* Assets.xcassets */; };
 		FEC4AA131DB8F1F700B8B0D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC4AA111DB8F1F700B8B0D8 /* LaunchScreen.storyboard */; };
@@ -34,10 +36,12 @@
 		FE03CC001DBFF2B000368E0B /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		FE03CC021DBFF2E200368E0B /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		FE2B09C31DBA3ABD00325710 /* VideoFille.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFille.swift; sourceTree = "<group>"; };
+		FEA8AABC1DCA302A0078562A /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		FEA8AABE1DCA30740078562A /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		FEA8AAC01DCA30DA0078562A /* ContainerFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerFeedViewController.swift; sourceTree = "<group>"; };
 		FEB1D8341DB95539007B089A /* FeaturedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedViewController.swift; sourceTree = "<group>"; };
 		FEC4AA051DB8F1F700B8B0D8 /* VidVideoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VidVideoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC4AA081DB8F1F700B8B0D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FEC4AA0A1DB8F1F700B8B0D8 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		FEC4AA0D1DB8F1F700B8B0D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FEC4AA0F1DB8F1F700B8B0D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEC4AA121DB8F1F700B8B0D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -131,7 +135,9 @@
 		FEC4AA271DB9109B00B8B0D8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				FEC4AA0A1DB8F1F700B8B0D8 /* FeedViewController.swift */,
+				FEA8AAC01DCA30DA0078562A /* ContainerFeedViewController.swift */,
+				FEA8AABE1DCA30740078562A /* RegisterViewController.swift */,
+				FEA8AABC1DCA302A0078562A /* FeedViewController.swift */,
 				FEC4AA291DB9111D00B8B0D8 /* NewViewController.swift */,
 				FEB1D8341DB95539007B089A /* FeaturedViewController.swift */,
 				FEC4AA0C1DB8F1F700B8B0D8 /* Main.storyboard */,
@@ -286,13 +292,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEA8AAC11DCA30DA0078562A /* ContainerFeedViewController.swift in Sources */,
 				FE2B09C41DBA3ABD00325710 /* VideoFille.swift in Sources */,
 				FED59AA41DC0B999001DE534 /* APIRequest.swift in Sources */,
 				FEC4AA2A1DB9111D00B8B0D8 /* NewViewController.swift in Sources */,
-				FEC4AA0B1DB8F1F700B8B0D8 /* FeedViewController.swift in Sources */,
+				FEA8AABF1DCA30740078562A /* RegisterViewController.swift in Sources */,
 				FEB1D8351DB95539007B089A /* FeaturedViewController.swift in Sources */,
 				FE03CC011DBFF2B000368E0B /* CustomCell.swift in Sources */,
 				FEC4AA091DB8F1F700B8B0D8 /* AppDelegate.swift in Sources */,
+				FEA8AABD1DCA302A0078562A /* FeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
